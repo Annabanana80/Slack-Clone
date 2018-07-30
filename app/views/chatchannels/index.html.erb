@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h4>All Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @chatchannels.each do |chatchannel| %>
+      <%if user_signed_in? %>
+      <tr>
+        <td><%= chatchannel.name %></td>
+        <td><%= link_to 'Go!', chatchannel %></td>
+        <td><%= link_to 'Edit', edit_chatchannel_path(chatchannel) %></td>
+        <td><%= link_to 'Delete', chatchannel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Join", chatchannel_chatchannel_users_path(chatchannel), method: :post %></td>
+        <td><%= link_to "Leave", chatchannel_chatchannel_users_path(chatchannel), method: :delete %></td>
+        <%else%>
+          <td><%= chatchannel.name %></td>
+      </tr>
+    <% end %>
+    <%end%>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create a New Channel', new_chatchannel_path %>

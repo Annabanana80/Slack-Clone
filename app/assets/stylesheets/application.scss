@@ -1,0 +1,18 @@
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.unread {
+	margin-top: 50px;
+	display: flex;
+	font-weight: bold;
+	color: red;
+	
+}
+.unread:before, .unread:after{
+  color:red;
+  content:'';
+  flex:1;
+  border-bottom:groove 2px;
+  margin:auto 0.25em;
+  box-shadow: 0 -1px ;/* ou 0 1px si border-style:ridge */
+}
