@@ -20,7 +20,7 @@
 	      <ul class="right hide-on-med-and-down">
 	      	<%if user_signed_in? %>
             <%= yield :right_nav %>
-                <li><%= current_user.image%></li>
+                <li><%= image_tag(current_user.image_url(:thumb))%></li>
                 <li><a materialize="dropdown" class="dropdown-trigger" href="#" data-activates="dropdown1"><%= current_user.username %><i class="material-icons right">arrow_drop_down</i></a></li>
                 <ul id="dropdown1" class="dropdown-content">
                   <li><%= link_to "Settings", edit_user_registration_path %></li>
