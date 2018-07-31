@@ -22,6 +22,7 @@
         <td><%= link_to "Join", chatchannel_chatchannel_users_path(chatchannel), method: :post %></td>
         <td><%= link_to "Leave", chatchannel_chatchannel_users_path(chatchannel), method: :delete %></td>
         <%else%>
+      </tr>
           <td><%= chatchannel.name %></td>
       </tr>
     <% end %>
@@ -30,5 +31,8 @@
 </table>
 
 <br>
-
+<%if user_signed_in? %>
 <%= link_to 'Create a New Channel', new_chatchannel_path %>
+<%else%>
+<p>Sign in to create a new channel</p>
+<%end%>

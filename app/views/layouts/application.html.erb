@@ -20,7 +20,7 @@
 	      <ul class="right hide-on-med-and-down">
 	      	<%if user_signed_in? %>
             <%= yield :right_nav %>
-                <li><%= image_tag(current_user.image_url(:thumb))%></li>
+                <li style="margin-top:7px;"><%= image_tag(current_user.image_url(:thumb), :class=>"circle", size: "50x50")%></li>
                 <li><a materialize="dropdown" class="dropdown-trigger" href="#" data-activates="dropdown1"><%= current_user.username %><i class="material-icons right">arrow_drop_down</i></a></li>
                 <ul id="dropdown1" class="dropdown-content">
                   <li><%= link_to "Settings", edit_user_registration_path %></li>
@@ -39,7 +39,7 @@
     </nav>
   </div>  
     <!-- Page Layout here -->
-    <div>
+    <main>
       <div class="row">
         <div class="col s3" style="position: fixed;">
           <% if user_signed_in? %>
@@ -50,24 +50,23 @@
               <% end %>
             </ul>
             <%else%>
-            <h5>Sign up or Login to See Your Channels</h5>
-          <% end %>
-          
+            <h5 style="margin-bottom: 0px;">Sign up or login to see your channels and</h5>
+          <% end %>          
           <%if user_signed_in? %>
           <h5>Who's Online</h5>
           <ul>
             <% (User.all - [current_user]).each do |user| %>
-            <li><%= image_tag(user.image_url(:thumb))%><%=link_to user.username, direct_message_path(user.id), data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %></li>
+            <li><%= image_tag(user.image_url(:thumb), :class=>"circle", size: "50x50")%><%=link_to user.username, direct_message_path(user.id), data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %></li>
             <%end%>
           </ul>
           <% else %>
-          <h5>Sign in or sign up to see who's online</h5>
+          <h5 style="margin-top:0px;">who is online</h5>
           <% end %>
         </div>
         <div class="col s9 push-s3">
           <%= yield %>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

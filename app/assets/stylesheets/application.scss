@@ -16,3 +16,16 @@
   margin:auto 0.25em;
   box-shadow: 0 -1px ;/* ou 0 1px si border-style:ridge */
 }
+body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.breaking{
+  max-width: 100%;
+  word-wrap: break-word;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  width: 73.429%
+}

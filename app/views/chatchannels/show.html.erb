@@ -12,13 +12,14 @@
       <span class="unread">Unread Messages</span>
     <% end %>
 	
-		<%= render message %>
+		<%= render message%>
 	<% end %>
 </div>
+<div class="footer">
+  <%= form_for [@chatchannel, Message.new] do |f|%>
+  	<%= f.text_area :body, class: "form-control", autofocus: true %>
+  <% end %>
 
-<%= form_for [@chatchannel, Message.new] do |f|%>
-	<%= f.text_area :body, class: "form-control", autofocus: true %>
-<% end %>
-
-<%= link_to 'Edit', edit_chatchannel_path(@chatchannel) %> |
-<%= link_to 'Home', chatchannels_path %>
+  <%= link_to 'Edit', edit_chatchannel_path(@chatchannel) %> |
+  <%= link_to 'Home', chatchannels_path %>
+</div>
