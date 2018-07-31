@@ -57,7 +57,7 @@
           <h5>Who's Online</h5>
           <ul>
             <% (User.all - [current_user]).each do |user| %>
-            <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %></li>
+            <li><%= image_tag(user.image_url(:thumb))%><%=link_to user.username, direct_message_path(user.id), data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %></li>
             <%end%>
           </ul>
           <% else %>
