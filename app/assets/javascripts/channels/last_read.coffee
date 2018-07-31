@@ -1,4 +1,4 @@
-App.last_read = App.cable.subscriptions.create "LastReadChatchannel",
+App.last_read = App.cable.subscriptions.create "LastReadChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
 

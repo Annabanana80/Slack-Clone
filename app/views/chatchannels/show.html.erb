@@ -16,8 +16,9 @@
 	<% end %>
 </div>
 <div class="footer">
+  
   <%= form_for [@chatchannel, Message.new] do |f|%>
-  	<%= f.text_area :body, class: "form-control", autofocus: true %>
+  	<%= f.text_area :body, class: "form-control", autofocus: true%>
   <% end %>
 
   <%= link_to 'Edit', edit_chatchannel_path(@chatchannel) %> |
