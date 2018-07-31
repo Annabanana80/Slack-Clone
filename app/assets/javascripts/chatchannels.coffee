@@ -26,5 +26,4 @@ $(document).on "turbolinks:load", ->
 
   $(".dropdown-trigger").dropdown();  
 
-  window_size = $(window).height();
-  $(".col").height(window_size);
+  

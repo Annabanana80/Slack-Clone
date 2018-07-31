@@ -8,7 +8,7 @@ class Chatchannel < ApplicationRecord
 
   def self.direct_message_for_users(users)
     user_names = users.map(&:username).sort
-    name = "Direct Message: #{user_names.join(" : ")}"
+    name = "Direct Message: #{user_names.join(" ~ ")}"
 
     if chatchannel = direct_messages.where(name: name).first
       chatchannel

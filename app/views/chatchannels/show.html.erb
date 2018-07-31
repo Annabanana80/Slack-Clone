@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Current Channel:</strong>
-  <%= @chatchannel.name %>
-</p>
+<h4>
+  <strong>Current Channel:</strong>  
+</h4>
+<h5><%= @chatchannel.name %></h5>
 <% unread_messages = false %>
-<div data-behavior='messages' data-chatchannel-id='<%= @chatchannel.id %>'>
+<div data-behavior='messages' data-chatchannel-id='<%= @chatchannel.id %>' style="margin-bottom: 80px;">
 	  <% @messages.each do |message| %>
     <% if !unread_messages && @chatchannel_user.last_read_at < message.created_at %>
       <% unread_messages = true %>

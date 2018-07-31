@@ -27,5 +27,15 @@ body{
 .footer{
   position: fixed;
   bottom:0;
-  width: 73.429%
+  width: 73.429%;
+  background-color: white;
+}
+a{
+  color: #212121;
+}
+div.col.s9.push-s3, div.col.s3.cyan.accent-2{
+  height:100%
+}
+div.col.s12.offset-m3{
+  margin-left:0px;
 }
