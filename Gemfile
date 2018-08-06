@@ -58,4 +58,6 @@ gem "devise_materialize", "~>1.1.1"
 gem 'redis'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'material_icons'
 gem 'gemoji'
+gem 'gemoji-parser'

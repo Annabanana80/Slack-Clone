@@ -25,5 +25,6 @@ $(document).on "turbolinks:load", ->
 
 
   $(".dropdown-trigger").dropdown();  
+  $('.modal').modal();
 
   
